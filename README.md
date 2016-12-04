@@ -3,9 +3,10 @@
 ##Run Development Mode
 
 Development Mode uses HotModuleReplacement and nodemon for easy code modifications.
--Open two command windows on project root
--Fisrt one write: npm run webpack-dev
--Second one write: npm run start-dev
+
+- Open two command windows on project root
+- Fisrt one write: npm run webpack-dev
+- Second one write: npm run start-dev
 
 ##Run Production Mode
 
