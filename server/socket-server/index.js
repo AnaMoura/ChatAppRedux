@@ -1,0 +1,43 @@
+import io from 'socket.io';
+
+export default function (server) {
+  const socketServer = io(server);
+  const connections = [];
+  var userId = 0;
+
+  socketServer.on('connection', socket => {
+    connections.push(socket);
+    userId += 1;
+
+    socket.emit('start', {userId});
+
+    socket.on('message', data => {
+      connections.forEach(connectedSocket => {
+        if (connectedSocket !== socket) {
+          connectedSocket.emit('message', data);
+        }
+      });
+    });
+
+    socket.on('startTyping', data => {
+      connections.forEach(connectedSocket => {
+        if ( connectedSocket !== socket) {
+          connectedSocket.emit('startTyping', data);
+        }
+      });
+    });
+
+    socket.on('stopTyping', data => {
+      connections.forEach(connectedSocket => {
+        if ( connectedSocket !== socket) {
+          connectedSocket.emit('stopTyping', data);
+        }
+      });
+    });
+
+    socket.on('disconnect', () => {
+      const index = connections.indexOf(socket);
+      connections.splice(index, 1);
+    });
+  });
+}

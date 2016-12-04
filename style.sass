@@ -1,0 +1,94 @@
+*
+  padding: 0
+  margin: 0
+  font-family: monospace
+body
+  background: radial-gradient(circle, white, #96B5BB)
+
+.chat-window
+  margin: 0% 5%
+  display: flex
+  flex-direction: column
+  background: white
+  justify-content: center
+
+
+.message-list
+  color: white
+  width: 100%
+
+.message-item
+  display: flex
+  justify-content: flex-end
+  margin: 2%
+  text-align: left
+  flex-wrap: wrap
+  &.is-response
+    justify-content: flex-start
+
+.message-text
+  word-break: break-all
+  font-size: calc(12px + 0.5vw)
+  padding: 1%
+  padding-left: 2%
+  background-color:#027084
+  margin-bottom: 0.5%
+  border-radius: 5px
+  text-align: right
+  &.is-response
+    background-color:#49AFC2
+    text-align: left
+    padding-right: 2%
+    padding-left: 1%
+
+.message-nickname
+  color: #243235
+  font-size: calc(8px + 0.5vw)
+
+.message-entry-box
+  background-color: white
+  border-radius: 5px
+  margin-top: 2%
+
+textarea
+  resize: none
+  border-radius: 0
+  border: 0
+  box-shadow: none
+  outline: none
+  box-shadow: 0 2px 0 0 #e8e8e8
+  padding: 1px 30px 1px 0
+  margin-left: 10%
+  min-height: 50px
+  line-height: 20px
+  height: auto
+  width: 70%
+  margin-bottom: 20px
+
+.menu
+    margin: 0 auto
+    height: 48px
+    background: #49AFC2
+    width: 100%
+
+form
+  height: 100%
+
+.submit-button
+  height: 100%
+  font-weight: bold
+  color: #027084
+  font-size: 13px
+  line-height: 16px
+
+.input-nick
+  padding-left: 2%
+  height: 90%
+  font-weight: bold
+  color: black
+  font-size: 13px
+  line-height: 16px
+
+.isTyping
+  color: #b9cfe3
+  padding-left: 2%
